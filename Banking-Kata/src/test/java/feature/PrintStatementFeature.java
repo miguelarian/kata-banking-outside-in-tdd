@@ -7,8 +7,8 @@ import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.*;
 
 public class PrintStatementFeature {
 
@@ -33,6 +33,7 @@ public class PrintStatementFeature {
     public void print_statement_containing_all_transactions() {
 
         // Given
+        given(clock.todayAsString()).willReturn("01/04/2014", "02/04/2014", "10/04/2014");
         account.deposit(1000);
         account.withdraw(100);
         account.deposit(500);

@@ -8,7 +8,8 @@ public class Clock {
     private static final DateTimeFormatter DD_MM_YYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public String todayAsString() {
-        return today().format(DD_MM_YYYY);
+        LocalDate today = this.today();
+        return today.format(DD_MM_YYYY);
     }
 
     protected LocalDate today() {
